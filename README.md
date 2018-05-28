@@ -18,3 +18,7 @@ CSS雪碧图。合并 CSS图片，可以有效减少请求数。同时，对于�
 ## 开发者工具之资源加载时序
 浏览器的资源加载时序图可以帮助分析页面资源加载过程中的性能问题。这种方法可以粗粒度地宏观分析浏览器的所有资源文件请求耗时和文件加载顺序情况，据此有利于找出加载过程中比较耗时的文件资源，帮助我们有针对性地进行优化。
 
+    collect = await dataList.collectInfo(value)
+    let { auditCaseNum } = await dataList.auditInfo(value)
+    collect.auditCaseNum = auditCaseNum
+    commit(config.commitName('collectInfo'), collect)
