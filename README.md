@@ -25,9 +25,13 @@ DOMContentLoaded 会比 Load 时间小，两者时间差大致等于外部资源
 
 Finish： 是页面上所有 http 请求发送到响应完成的时间，HTTP1.0/1.1 协议限定，**单个域名的请求并发量是 6 个**，即 Finish 是所有请求在并发量为6的限制下完成的时间。当 Finish 的时间比 Load 大，意味着页面有相当部分的请求。据此利用浏览器并发请求的特性，优化代码，提高前端请求的并发量。
 
+   优化前：
    `collect = await dataList.collectInfo(value)
+
     let { auditCaseNum } = await dataList.auditInfo(value)
+
     collect.auditCaseNum = auditCaseNum
+
     commit(config.commitName('collectInfo'), collect)`
 
     优化后：
@@ -45,3 +49,10 @@ performance 是最好的性能优化的第一站，集中说明了你的应用�
 ![](https://github.com/ngdlbq/font-end-performance/blob/master/src/image/%E5%9B%BE%E7%89%878.png?raw=true)
 
 network、performance只是宏观上对网站的网站性能进行分析，如果需要更加具体的定位到某个(些)函数引起的性能问题， 则还需结合 jsProfiler、memory 进行更深入的优化。（见下回讲解）
+
+### 参考文档
+https://developers.google.com/web/tools/chrome-devtools/
+
+https://www.jianshu.com/p/7ebdb716ee9e
+
+http://www.cnblogs.com/constantince/p/4607497.html
